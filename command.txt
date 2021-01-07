@@ -1,0 +1,20 @@
+set zlabel "elevation (ft)"
+set xlabel "x"
+set ylabel "y"
+set style line 1  linecolor rgb '#0060ad' linetype 1 linewidth .1 pointtype 0 pointsize .1
+set style line 2  linecolor rgb 'red' linetype 2 linewidth 1 pointtype 0 pointsize 1
+set style line 3  linecolor rgb 'blue' linetype 1 linewidth .1 pointtype 0 pointsize .1
+set title "Mountain rendering using random triangularization"
+
+#set pm3d; set palette rgbformulae 7,5,15
+#set hidden3d
+#set dgrid3d 45,45  
+set xrange [0:500]
+set yrange [-370:380]
+
+
+
+splot 'GrandCanyon.txt'  with linespoints linestyle 1,'River_dat.txt'with linespoint linestyle 3, 'Solutionpath.txt' with linespoint linestyle 2
+#splot 'Pyramid_data.txt' with linespoints linestyle 1
+#splot  with linespoints linestyle 1,  'Pyramid_data2.txt' with linespoints linestyle 2 
+pause -1
